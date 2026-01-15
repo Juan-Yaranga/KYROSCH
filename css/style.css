@@ -190,6 +190,29 @@ body {
     font-size: 26px;
     cursor: pointer;
   }
+  /* ================================
+   LIMPIEZA HEADER MÓVIL
+================================ */
+
+@media (max-width: 768px) {
+
+  /* ocultar buscador antiguo */
+  .buscador input {
+    display: none;
+  }
+
+  /* ocultar botón viejo de buscar */
+  .buscador button {
+    display: none;
+  }
+
+  /* reducir espacio que dejaba */
+  .buscador {
+    padding: 0;
+    background: transparent;
+  }
+
+}
 }
 .header-container{
   display:flex;

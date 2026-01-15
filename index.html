@@ -79,8 +79,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <script>
-document.querySelector(".search-icon").addEventListener("click",()=>{
-  document.querySelector(".buscador").classList.toggle("active");
+document.querySelector(".search-icon").addEventListener("click", () => {
+  const buscador = document.querySelector(".buscador");
+
+  buscador.style.display =
+    buscador.style.display === "block" ? "none" : "block";
 });
 </script>
 
