@@ -125,6 +125,21 @@ body {
     padding: 80px 60px;
     background:     #f1ede6
 }
+@media (max-width: 768px) {
+  
+
+  
+
+ .bnt-principal {
+    padding: 7px 18px;
+    font-size: 13px;
+  }
+  .bnt-secundario {
+    padding: 6px 14px;
+    font-size: 12px;
+}
+}
+
 .coleccion-card {
     position: relative;
     width: 480px;
@@ -579,8 +594,7 @@ section {
 .footer-kyrosch,
 .bloque-compra,
 .porque-kyrosch,
-.destacados,
-.destacados-2 {
+.destacados {
     position: relative;
     overflow: visible;
 }
@@ -672,7 +686,7 @@ section {
   background: var(--accent);
   transition: width .3s;
 }
-.menu-link:hover::after,{
+.menu-link:hover::after, { 
     width: 100%;
 }
 
@@ -749,4 +763,206 @@ section {
 .coleccion-card {
   /* box-shadow corrected alpha */
   box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+}
+@media (max-width: 768px) {
+
+  .destacados-2 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding: 16px;
+    width: 100%;
+  }
+
+  .coleccion-card {
+    width: 100% !important;
+    height: 360px;
+    border-radius: 18px;
+  }
+
+  .coleccion-card img {
+    border-radius: 18px;
+    object-fit: cover;
+  }
+}
+/* ===============================
+   ANIMACIÓN COLECCIONES - SOLO MOBILE
+=============================== */
+@media (max-width: 768px) {
+
+  .coleccion-card {
+    opacity: 0;
+    transform: translateY(35px) scale(0.96);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+  }
+
+  .coleccion-card.aparece {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+/* ===========================
+   ANIMACIÓN COLECCIÓN – MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+  .coleccion-card.scroll-reveal {
+    transform: translateY(60px) scale(0.94);
+    filter: blur(10px);
+  }
+
+  .coleccion-card.scroll-reveal.active {
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+    transition: 
+      transform 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 1.1s ease,
+      opacity 0.8s ease;
+  }
+
+}
+/* ===========================
+   BOTONES PREMIUM – MOBILE
+=========================== */
+@media (max-width: 768px) {
+
+  .coleccion-botones {
+    animation: botones-float 4s ease-in-out infinite;
+  }
+
+  .bnt-principal {
+    position: relative;
+    overflow: hidden;
+    animation: pulse-gold 2.8s ease-in-out infinite;
+  }
+
+  .bnt-principal::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255,255,255,0.55) 50%,
+      transparent 70%
+    );
+    animation: shine 3s infinite;
+  }
+
+  .bnt-secundario {
+    backdrop-filter: blur(6px);
+    animation: soft-glow 3.5s ease-in-out infinite;
+  }
+
+}
+
+/* ===== ANIMACIONES ===== */
+
+@keyframes botones-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes pulse-gold {
+  0% { box-shadow: 0 0 0 rgba(212,175,55,0.4); }
+  50% { box-shadow: 0 0 22px rgba(212,175,55,0.85); }
+  100% { box-shadow: 0 0 0 rgba(212,175,55,0.4); }
+}
+
+@keyframes shine {
+  0% { left: -120%; }
+  50% { left: 120%; }
+  100% { left: 120%; }
+}
+
+@keyframes soft-glow {
+  0% { box-shadow: 0 0 0 rgba(255,255,255,0.1); }
+  50% { box-shadow: 0 0 18px rgba(255,255,255,0.35); }
+  100% { box-shadow: 0 0 0 rgba(255,255,255,0.1); }
+}
+/* ===============================
+   AJUSTE PREMIUM BOTONES - MOBILE
+=============================== */
+@media (max-width: 768px) {
+
+  .bnt-principal,
+  .bnt-secundario {
+    transition: 
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .bnt-principal:active,
+  .bnt-secundario:active {
+    transform: scale(0.95);
+  }
+
+}
+/* ===============================
+   CORRECCIÓN POSICIÓN BOTONES MOBILE
+=============================== */
+@media (max-width: 768px) {
+
+  .coleccion-botones{
+    left: 0 !important;
+    transform: none !important;
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  .bnt-principal,
+  .bnt-secundario{
+    width: 100%;
+    text-align: center;
+  }
+
+}
+/* Capa base del card */
+.coleccion-card {
+  position: relative;
+}
+
+/* Textos Colección */
+.coleccion-card h1,
+.coleccion-card h2,
+.coleccion-card h3,
+.coleccion-card .titulo-coleccion {
+  position: relative;
+  z-index: 2;
+}
+
+/* Botones siempre encima */
+.coleccion-botones {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+/* ===== AJUSTE FINO DE BOTONES EN MÓVIL ===== */
+@media (max-width: 768px) {
+
+  .coleccion-botones {
+    bottom: 20px;           /* los baja */
+    gap: 10px;              /* separa los dos botones */
+  }
+
+  .bnt-principal {
+    padding: 4px 26px;
+    font-size: 14px;
+  }
+
+  .bnt-secundario {
+    font-size: 13px;
+    padding: 5px 22px;
+  }
+
 }

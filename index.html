@@ -86,6 +86,19 @@ document.querySelector(".search-icon").addEventListener("click", () => {
     buscador.style.display === "block" ? "none" : "block";
 });
 </script>
+<script>
+const cards = document.querySelectorAll('.coleccion-card');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('aparece');
+    }
+  });
+},{ threshold: 0.3 });
+
+cards.forEach(card => observer.observe(card));
+</script>
 
 
 
@@ -103,7 +116,7 @@ document.querySelector(".search-icon").addEventListener("click", () => {
     </div>
 <!-- paneles móviles (colocar fuera del header si quieres overlay) -->
     <nav class="menu-mobile-panel" aria-hidden="true">
-      <a class="menu-link" href="/">Inicio</a>
+      <a class="menu-link" href="index.html">Inicio</a>
       <a class="menu-link" href="varones.html">Varones</a>
       <a class="menu-link" href="mujeres.html">Mujeres</a>
       <a class="menu-link" href="novedades.html">Novedades</a>
@@ -118,9 +131,6 @@ document.querySelector(".search-icon").addEventListener("click", () => {
     </div>
   </div>
 </header>
-
-
-
     <div class="barra-envios">
         <span class="envios-texto">
             Bienvenido a KYROSCH - Envíos a todo el Perú 
@@ -128,10 +138,6 @@ document.querySelector(".search-icon").addEventListener("click", () => {
 
         <img src="img/carro.svg" alt="envíos" class="envios-icono">
     </div>
-  
-
-
-
 <section class="destacados">
     <div class="destacado-imagen">
             <img src="img/portada.png" alt="portada KYROSCH">
@@ -141,16 +147,16 @@ document.querySelector(".search-icon").addEventListener("click", () => {
     <div class="destacado-imagen-varon coleccion-card scroll-reveal">
             <img src="img/varon.png" alt=" varon">
             <div class="coleccion-botones">
-              <a href="/varones" class="bnt-principal"> Para Él </a>
-              <a href="/varones" class="bnt-secundario"> Descubrir Colección </a>
+              <a href="varones.html" class="bnt-principal"> Para Él </a>
+              <a href="varones.html" class="bnt-secundario"> Descubrir Colección </a>
             </div>
     </div>
 
     <div class="destacado-imagen-mujer coleccion-card scroll-reveal">
             <img src="img/mujer.png" alt=" mujer">       
             <div class="coleccion-botones">
-              <a href="/mujeres" class="bnt-principal"> Para Ella </a>
-              <a href="/mujeres" class="bnt-secundario"> Descubrir Colección </a>
+              <a href="mujeres.html" class="bnt-principal"> Para Ella </a>
+              <a href="mujeres.html" class="bnt-secundario"> Descubrir Colección </a>
             </div>
     </div>
 </section>
@@ -280,11 +286,11 @@ document.querySelector(".search-icon").addEventListener("click", () => {
 
         <div class="footer-col">
             <h4>KYROSCH</h4>
-            <a href="/">Inicio</a>
-            <a href="/varones">Varones</a>
-            <a href="/mujeres">Mujeres</a>
-            <a href="/novedades">Novedades</a>
-            <a href="/ofertas">Ofertas</a>
+            <a href="index.html">Inicio</a>
+            <a href="varones.html">Varones</a>
+            <a href="mujeres.html">Mujeres</a>
+            <a href="novedades.html">Novedades</a>
+            <a href="ofertas.html">Ofertas</a>
         </div>
 
         <div class="footer-col">
@@ -298,9 +304,9 @@ document.querySelector(".search-icon").addEventListener("click", () => {
         <div class="footer-col">
             <h4>Contacto</h4>
             <a href="https://wa.me/message/PZPGSKT5KI3OL1">WhatsApp</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
-            <p class="footer-correo">ventas@kyrosch.pe</p>
+            <a href="https://www.instagram.com/kyrosch_1?igsh=NzVlYnZyYW5vb3I1">Instagram</a>
+            <a href="https://www.facebook.com/share/16wsGMvC2S/?mibextid=wwXIfr">Facebook</a>
+            <p class="kyrosch4@gmail.com">kyroschventas.com</p>
         </div>
 
     </div>
