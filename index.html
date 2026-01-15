@@ -83,25 +83,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <body>
 
-   <header class="header">
-    <div class="header-container">
-        <img src="img/logo.svg"
-             alt="KYROSCH"
-             class="logo">
-    </div>
+<header class="header">
+  <div class="header-container">
+
+    <!-- Logo -->
+    <img src="img/logo.svg" alt="KYROSCH" class="logo">
+
+    <!-- Buscador (solo desktop) -->
     <div class="buscador">
-    <input type="text" placeholder="Buscar en KYROSCH...">
-    <button>🔍</button>
+      <input type="text" placeholder="Buscar en KYROSCH...">
+      <button>🔍</button>
     </div>
-    <nav class="menu">
-        <a href="/" class="menu-link">Inicio</a>
-        <a href="/varones" class="menu-link">Varones</a>
-        <a href="/mujeres" class="menu-link">Mujeres</a>
-        <a href="/novedades" class="menu-link">Novedades</a>
-        <a href="/ofertas" class="menu-link">Ofertas</a>
-        <a href="/contacto" class="menu-link">Contacto</a>
-    </nav>
-    </header>
+
+    <!-- Acciones móviles -->
+    <div class="header-actions">
+      <button class="search-btn">🔍</button>
+      <button class="menu-btn">☰</button>
+    </div>
+
+  </div>
+
+  <!-- Menú -->
+  <nav class="menu">
+    <a href="index.html">Inicio</a>
+    <a href="varones.html">Varones</a>
+    <a href="mujeres.html">Mujeres</a>
+    <a href="novedades.html">Novedades</a>
+    <a href="ofertas.html">Ofertas</a>
+    <a href="contactos.html">Contacto</a>
+  </nav>
+</header>
+
 
     <div class="barra-envios">
         <span class="envios-texto">
