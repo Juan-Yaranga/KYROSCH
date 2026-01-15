@@ -191,7 +191,53 @@ body {
     cursor: pointer;
   }
 }
+.header-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+}
 
+.header-right{
+  display:flex;
+  gap:15px;
+  align-items:center;
+}
+
+/* ======== DESKTOP ======= */
+.search-icon,
+.menu-mobile{
+  display:none;
+}
+
+/* ======== MOBILE ======= */
+@media (max-width:768px){
+
+  .menu{
+    display:none;
+  }
+
+  .buscador{
+    display:none;
+    padding:10px;
+    background:white;
+  }
+
+  .search-icon,
+  .menu-mobile{
+    display:block;
+    font-size:24px;
+    background:none;
+    border:none;
+  }
+
+  .logo{
+    width:130px;
+  }
+}
+.buscador.active{
+  display:block;
+}
 .barra-envios {
     position: sticky;
     top: 80px;
