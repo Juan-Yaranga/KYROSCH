@@ -1765,3 +1765,24 @@ section {
     text-align: center;
   }
 }
+.barra-envios-novedades {
+  display: flex;
+  background-color: #0b132b;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.envios-texto-novedades {
+ color: #ffffff;
+ font-weight: 600;
+
+}
+ 
+.novedades-imagen img {
+  max-width: 100%;
+}
+@media (max-width: 768px) {
+  .envios-texto-novedades{
+   font-size: 11px;
+  }
+}
