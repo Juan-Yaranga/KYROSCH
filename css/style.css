@@ -1786,3 +1786,29 @@ section {
    font-size: 11px;
   }
 }
+.titulo-novedades {
+  background-color: #f1ede6;
+  margin-top: -5px;
+}
+.titulo-novedades h1{
+  font-size: 32px;
+  text-align: center;
+  color: #4b2c82;
+  margin: 20px 0;
+}
+.titulo-novedades h2{
+  font-size: 20px;
+  text-align: center;
+  color: #6b6b6b;
+  margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  .titulo-novedades h1{
+    font-size: 25px;
+  }
+  .titulo-novedades h2{
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
